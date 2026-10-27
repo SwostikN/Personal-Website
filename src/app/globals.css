@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* Design tokens. Accent #1F5FD1 (royal blue) is 5.8:1 on white: AA for text and buttons.
+   The brighter #3B82F6 and the sky-blue blush pair are for decorative shapes only. */
+@theme {
+  --color-ink: #262626;
+  --color-ink-muted: #5c5c66;
+  --color-accent: #1f5fd1;
+  --color-accent-bright: #3b82f6;
+  --color-blush: #dce8ff;
+  --color-blush-deep: #b9d1ff;
+  --color-canvas: #ffffff;
+  --color-surface: #f2f3f7;
+  --color-line: #e4e4ea;
+
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-bodoni), ui-serif, Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-none: 0;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-blush);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Scroll reveal (see components/motion.tsx). Only ever applied by JS, never by default. */
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.reveal-pending.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Pointer parallax (components/parallax.tsx sets --px / --py) */
+.parallax-layer {
+  transform: translate3d(calc(var(--px, 0) * var(--depth, 8px)), calc(var(--py, 0) * var(--depth, 8px)), 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
+}
+
+/* Records flowing through a pipeline (the "public systems" diagram) */
+@keyframes travel {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+.anim-travel {
+  animation: travel 3.6s linear infinite;
+}
+
+/* Hero entrance: shapes settle in once on load */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.anim-rise {
+  animation: rise-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.anim-pop {
+  animation: pop-in 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.1) both;
+}
+.anim-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+.anim-pulse {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+/* Long-form text inside case studies and posts */
+.prose-body p {
+  line-height: 1.75;
+}
+.prose-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-surface);
+  padding: 0.1em 0.35em;
+}
+.prose-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media print {
+  .reveal-pending {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  html {
+    font-size: 12.5px; /* every rem-based size scales down together */
+  }
+  .leading-relaxed {
+    line-height: 1.45;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  @page {
+    margin: 14mm 14mm;
+  }
+}
