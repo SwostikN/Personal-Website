@@ -1,6 +1,8 @@
 // UI prototype of the Road Development App (working title). Everything here is
 // SAMPLE DATA, drawn in HTML/CSS so it stays sharp, light and readable by screen readers.
 
+import Image from "next/image";
+
 const works = [
   { name: "Ring Road widening, section 4", ward: "Ward 8", budget: "NPR 182M", progress: 64, status: "On schedule" },
   { name: "Inner road blacktopping", ward: "Ward 14", budget: "NPR 41M", progress: 92, status: "Finishing" },
@@ -28,7 +30,10 @@ export function RoadAppMockup() {
         <div className="grid gap-4 p-4 sm:p-5 md:grid-cols-[1.35fr_1fr]">
           <div className="min-w-0">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="text-[0.95rem] font-bold text-ink">Road works · Kathmandu (sample)</p>
+              <div className="flex items-center gap-2.5">
+                <Image src="/logos/emblem-of-nepal.png" alt="Emblem of Nepal" width={250} height={211} sizes="2.5rem" className="h-auto w-10 shrink-0" />
+                <p className="text-[0.95rem] font-bold text-ink">Road works · Kathmandu (sample)</p>
+              </div>
               <div className="flex gap-1.5 text-[0.65rem]">
                 {["All wards", "Active", "2083/84"].map((c) => (
                   <span key={c} className="rounded-full border border-line px-2 py-0.5 text-ink-muted">{c}</span>
