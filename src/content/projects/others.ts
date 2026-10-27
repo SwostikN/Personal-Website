@@ -76,7 +76,7 @@ export const clientWebsites: Project = {
           type: "list",
           items: [
             "A CMS at /admin: case studies with drafts, reordering and a live preview, every page section editable or switched off, and an image library.",
-            "Two roles (administrator and editor) **enforced by row-level security in PostgreSQL**, so the database itself refuses what a role may not do.",
+            "Two roles (administrator and editor) enforced by row-level security in PostgreSQL, so the database itself refuses what a role may not do.",
             "The contact form, which showed a success message without sending anything, now saves to an enquiries inbox with statuses, notes and CSV export.",
             "A database trigger emails each new enquiry through Resend. A failed alert never loses the enquiry, and the email key stays in Supabase Vault, not in the code.",
             "The site renders from built-in content if the database is empty or unreachable, so it is never blank.",
