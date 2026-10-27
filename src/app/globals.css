@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
-/* Design tokens. Accent #1F5FD1 (royal blue) is 5.8:1 on white: AA for text and buttons.
-   The brighter #3B82F6 and the sky-blue blush pair are for decorative shapes only. */
+/* Design tokens, from the Emblem of Nepal. Accent #9E1B32 (deep crimson) is 7.9:1 on white and
+   secondary #003893 (flag blue) 10.6:1: both AA for text and buttons. The blush pair is decorative only. */
 @theme {
-  --color-ink: #262626;
-  --color-ink-muted: #5c5c66;
-  --color-accent: #1f5fd1;
-  --color-accent-bright: #3b82f6;
-  --color-blush: #dce8ff;
-  --color-blush-deep: #b9d1ff;
+  --color-ink: #1c1c22;
+  --color-ink-muted: #585862;
+  --color-accent: #9e1b32;
+  --color-secondary: #003893;
+  --color-blush: #f3e6e8;
+  --color-blush-deep: #e2c3c8;
   --color-canvas: #ffffff;
   --color-surface: #f2f3f7;
   --color-line: #e4e4ea;

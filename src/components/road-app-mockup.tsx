@@ -12,7 +12,7 @@ const works = [
 
 const statusTone: Record<string, string> = {
   "On schedule": "bg-[#E6F4EA] text-[#1E6B35]",
-  Finishing: "bg-[#E8F0FF] text-[#1F5FD1]",
+  Finishing: "bg-[#E6ECF7] text-[#003893]",
   Delayed: "bg-[#FFF1E0] text-[#9A4A00]",
 };
 
@@ -20,7 +20,7 @@ export function RoadAppMockup() {
   return (
     <figure className="relative" aria-label="Road Development App prototype with sample data">
       {/* Desktop dashboard */}
-      <div className="overflow-hidden rounded-xl border border-line bg-white shadow-[0_30px_60px_-30px_rgba(31,95,209,0.35)]">
+      <div className="overflow-hidden rounded-xl border border-line bg-white shadow-[0_30px_60px_-30px_rgba(0,56,147,0.25)]">
         <div className="flex items-center gap-2 border-b border-line bg-surface px-4 py-2.5">
           <span className="size-2.5 rounded-full bg-[#E4E4EA]" />
           <span className="size-2.5 rounded-full bg-[#E4E4EA]" />
@@ -64,7 +64,7 @@ export function RoadAppMockup() {
                   </span>
                   <span className="flex items-center gap-1.5">
                     <span className="h-1.5 w-16 overflow-hidden rounded-full bg-line">
-                      <span className="block h-full rounded-full bg-accent" style={{ width: `${w.progress}%` }} />
+                      <span className="block h-full rounded-full bg-secondary" style={{ width: `${w.progress}%` }} />
                     </span>
                     <span className="w-7 text-right text-[0.6rem] text-ink-muted">{w.progress}%</span>
                   </span>
@@ -78,10 +78,10 @@ export function RoadAppMockup() {
               <path d="M10 60 C 70 40, 120 90, 210 70" stroke="#CBD5E3" strokeWidth="7" fill="none" />
               <path d="M30 230 C 60 150, 120 140, 140 10" stroke="#CBD5E3" strokeWidth="5" fill="none" />
               <path d="M0 170 C 80 160, 150 200, 220 175" stroke="#DCE3EE" strokeWidth="4" fill="none" />
-              <path d="M10 60 C 70 40, 120 90, 210 70" stroke="#1F5FD1" strokeWidth="2.5" strokeDasharray="5 4" fill="none" />
+              <path d="M10 60 C 70 40, 120 90, 210 70" stroke="#003893" strokeWidth="2.5" strokeDasharray="5 4" fill="none" />
               {[
                 [62, 52, "#1E6B35"],
-                [128, 88, "#1F5FD1"],
+                [128, 88, "#003893"],
                 [96, 160, "#9A4A00"],
                 [170, 182, "#1E6B35"],
               ].map(([x, y, c], i) => (
@@ -102,7 +102,7 @@ export function RoadAppMockup() {
         <p className="font-mono text-[0.55rem] tracking-wider text-accent uppercase">Ward 8 · sample</p>
         <p className="mt-1 text-[0.72rem] leading-tight font-bold text-ink">Ring Road widening, section 4</p>
         <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-line">
-          <div className="h-full w-[64%] rounded-full bg-accent" />
+          <div className="h-full w-[64%] rounded-full bg-secondary" />
         </div>
         <p className="mt-1 text-[0.58rem] text-ink-muted">64% complete · due Asar 2084</p>
         <div className="mt-2.5 space-y-1.5 text-[0.58rem]">

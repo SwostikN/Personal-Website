@@ -168,7 +168,7 @@ export default function Home() {
           <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {experienceCards.map((c) => (
               <li key={c.org} data-reveal>
-                <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_40px_-24px_rgba(31,95,209,0.45)]">
+                <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_40px_-24px_rgba(158,27,50,0.4)]">
                   <div className="flex items-center gap-3">
                     {c.logos.map((l) => (
                       <span key={l.src} className="relative flex h-12 w-20 items-center justify-center rounded-md border border-line bg-white p-1.5">
@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* Ongoing project: the Road Development App (prototype, sample data) */}
-      <section aria-labelledby="ongoing" className="overflow-hidden border-t border-line bg-[linear-gradient(180deg,#FBFCFF,#FFFFFF)] py-20 sm:py-28">
+      <section aria-labelledby="ongoing" className="overflow-hidden border-t border-line bg-[linear-gradient(180deg,#FCFAFA,#FFFFFF)] py-20 sm:py-28">
         <Container className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div data-reveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-[#F5D9A8] bg-[#FFF8EC] px-3 py-1 font-mono text-[0.7rem] tracking-wide text-[#8A5300] uppercase">
@@ -278,7 +278,7 @@ export default function Home() {
       <Improvements />
 
       {/* Closing: get in touch + newsletter (light band echoing the hero's sky-blue shard) */}
-      <section aria-labelledby="contact-cta" className="bg-[linear-gradient(160deg,#F7FAFF_0%,#E8F0FF_100%)] py-20 sm:py-28">
+      <section aria-labelledby="contact-cta" className="bg-[linear-gradient(160deg,#FCF8F8_0%,#F3E6E8_100%)] py-20 sm:py-28">
         <Container className="grid gap-14 lg:grid-cols-[1.25fr_1fr] lg:gap-24">
           <div className="border-l-[6px] border-accent pl-6 sm:pl-11">
             <Eyebrow>Get in touch</Eyebrow>

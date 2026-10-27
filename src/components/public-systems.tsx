@@ -54,7 +54,7 @@ export function PublicSystems() {
                 <span
                   key={delay}
                   aria-hidden
-                  className="anim-travel absolute top-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_4px_rgba(31,95,209,0.15)]"
+                  className="anim-travel absolute top-1/2 size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent shadow-[0_0_0_4px_rgba(158,27,50,0.15)]"
                   style={{ animationDelay: `${delay}s` }}
                 />
               ))}
@@ -123,13 +123,13 @@ export function Improvements() {
         <ul className="mt-12 grid gap-5 lg:grid-cols-3">
           {improvements.map((c) => (
             <li key={c.where} data-reveal>
-              <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_40px_-24px_rgba(31,95,209,0.45)]">
+              <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_40px_-24px_rgba(158,27,50,0.4)]">
                 <h3 className="text-lg font-bold text-ink">{c.where}</h3>
                 <div className="mt-4 rounded-lg bg-surface p-4">
                   <p className="font-mono text-[0.68rem] tracking-wide text-ink-muted uppercase">Before</p>
                   <p className="mt-1 text-[0.95rem] leading-relaxed text-ink-muted">{c.before}</p>
                 </div>
-                <div className="mt-3 rounded-lg border border-[#CFE0FF] bg-[#F3F7FF] p-4">
+                <div className="mt-3 rounded-lg border border-[#E2C3C8] bg-[#FBF3F4] p-4">
                   <p className="font-mono text-[0.68rem] tracking-wide text-accent uppercase">After</p>
                   <p className="mt-1 text-[0.95rem] leading-relaxed text-ink">{c.after}</p>
                 </div>

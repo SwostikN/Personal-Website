@@ -5,9 +5,9 @@ import { PointerParallax } from "./parallax";
 import { Container } from "./ui";
 
 // Hero, modelled on the reference layout (Landing Page 2): a greeting, an oversized
-// name with one accent-coloured letter, a two-line strapline, one square button, and a
+// name with one flag-blue letter, a two-line strapline, one square button, and a
 // contact strip with hairline dividers. On the right, an editorial collage: a
-// cut-out portrait over a giant serif initial, with blue and
+// cut-out portrait over a giant serif initial, with
 // blush shapes, dots, a hairline half-circle and vertical type. The shapes are
 // CSS/SVG sized in container units, so the collage scales as one piece.
 
@@ -79,7 +79,7 @@ function AccentI({ word }: { word: string }) {
   return (
     <>
       {word.slice(0, i)}
-      <span className="text-accent">i</span>
+      <span className="text-secondary">i</span>
       {word.slice(i + 1)}
     </>
   );
@@ -89,11 +89,6 @@ function HeroArt() {
   return (
     <PointerParallax className="@container relative order-1 mx-auto aspect-[5/6] w-full max-w-[20rem] select-none sm:max-w-[26rem] lg:order-2 lg:max-w-[36rem]">
       {/* Layers drift with the pointer by different depths (desktop mouse only). */}
-      <div aria-hidden className="parallax-layer pointer-events-none absolute inset-0 [--depth:14px]">
-      {/* blue disc behind the head (the flower's place in the reference) */}
-      <div aria-hidden className="anim-pop absolute top-[6cqw] left-[6cqw] aspect-square w-[36cqw] rounded-full bg-accent-bright [animation-delay:150ms]" />
-
-      </div>
       <div aria-hidden className="parallax-layer pointer-events-none absolute inset-0 [--depth:5px]">
       {/* the giant serif initial: lower left, starting at shoulder height so it never crosses the face */}
       <span
