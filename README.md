@@ -1,6 +1,8 @@
 # swostiknepal: portfolio
 
-Personal site of **Swostik Nepal**, System Analyst & SAP Business One Consultant, Kathmandu.
+Personal site of **Swostik Nepal**, System Analyst & SAP Business One Consultant, Kathmandu. Live at **https://swostikn.com.np**.
+
+Pushing to `main` deploys to production automatically (Vercel, connected to this repository).
 
 Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS v4. Every page, share image, the sitemap, robots.txt and the RSS feed are prerendered at build time.
 
