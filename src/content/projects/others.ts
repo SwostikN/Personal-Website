@@ -14,12 +14,7 @@ export const clientWebsites: Project = {
   timeline: "Aug – Sep 2026",
   role: "Developed and deployed",
   stack: ["Next.js", "TypeScript", "Supabase", "Resend", "Vitest"],
-  links: {
-    sites: [
-      { name: "Nritya Sanjiwani", href: "https://www.nrityasanjiwani.com" },
-      { name: "Cloud Bird India", href: "https://www.cloudbirdindia.com" },
-    ],
-  },
+  links: {},
   featured: false,
   order: 6,
   metrics: [
@@ -33,6 +28,7 @@ export const clientWebsites: Project = {
     {
       id: "nritya",
       title: "Nritya Sanjiwani: nrityasanjiwani.com",
+      link: { label: "Visit nrityasanjiwani.com", href: "https://www.nrityasanjiwani.com" },
       blocks: [
         {
           type: "p",
@@ -51,6 +47,7 @@ export const clientWebsites: Project = {
     {
       id: "cloudbird",
       title: "Cloud Bird India: cloudbirdindia.com",
+      link: { label: "Visit cloudbirdindia.com", href: "https://www.cloudbirdindia.com" },
       blocks: [
         {
           type: "p",

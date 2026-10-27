@@ -124,7 +124,9 @@ export function projectJsonLd(p: Project) {
     creator: { "@id": PERSON_ID },
     keywords: [...p.keywords, ...p.stack].join(", "),
     genre: p.kind,
-    ...(p.links.sites ? { sameAs: p.links.sites.map((s) => s.href) } : p.links.live ? { sameAs: p.links.live } : {}),
+    ...(p.links.live || p.sections.some((s) => s.link)
+      ? { sameAs: [p.links.live, ...p.sections.map((s) => s.link?.href)].filter(Boolean) }
+      : {}),
     ...(p.links.code ? { codeRepository: p.links.code } : {}),
     about: p.sections[0]?.blocks[0]?.type === "p" ? stripInline(p.sections[0].blocks[0].text) : p.summary,
   };

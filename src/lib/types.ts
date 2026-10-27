@@ -33,7 +33,13 @@ export type Block =
   | { type: "acceptance"; rows: { given: string; when: string; then: string }[] }
   | { type: "callout"; tone: "note" | "private"; text: Inline };
 
-export type Section = { id: string; title: string; blocks: Block[] };
+export type Section = {
+  id: string;
+  title: string;
+  blocks: Block[];
+  /** A live site this section describes, shown as a button under it. */
+  link?: { label: string; href: string };
+};
 
 export type ProjectKind =
   | "Enterprise"
@@ -61,8 +67,6 @@ export type Project = {
   stack: string[];
   links: {
     live?: string;
-    /** Several live sites (e.g. client work): one button each, used instead of `live`. */
-    sites?: { name: string; href: string }[];
     code?: string;
     private?: boolean;
   };

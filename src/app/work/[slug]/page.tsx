@@ -79,17 +79,11 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
               ))}
             </dl>
             <div className="flex flex-wrap items-start gap-3">
-              {project.links.sites
-                ? project.links.sites.map((site) => (
-                    <SmartLink key={site.href} href={site.href} className="inline-flex min-h-11 items-center gap-2 bg-accent px-5 font-semibold text-white hover:bg-ink">
-                      Visit {site.name} ↗
-                    </SmartLink>
-                  ))
-                : project.links.live && (
-                    <SmartLink href={project.links.live} className="inline-flex min-h-11 items-center gap-2 bg-accent px-5 font-semibold text-white hover:bg-ink">
-                      Visit live site ↗
-                    </SmartLink>
-                  )}
+              {project.links.live && (
+                <SmartLink href={project.links.live} className="inline-flex min-h-11 items-center gap-2 bg-accent px-5 font-semibold text-white hover:bg-ink">
+                  Visit live site ↗
+                </SmartLink>
+              )}
               {project.links.code && (
                 <SmartLink href={project.links.code} className="inline-flex min-h-11 items-center gap-2 border border-ink px-5 font-semibold text-ink hover:bg-ink hover:text-white">
                   View code ↗
@@ -192,6 +186,11 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
             <section key={s.id} id={s.id} aria-labelledby={`${s.id}-h`} className="scroll-mt-24">
               <h2 id={`${s.id}-h`} className="mb-6 text-2xl font-bold tracking-tight text-ink sm:text-3xl">{s.title}</h2>
               <Blocks blocks={s.blocks} />
+              {s.link && (
+                <SmartLink href={s.link.href} className="mt-8 inline-flex min-h-11 items-center gap-2 bg-accent px-5 font-semibold text-white hover:bg-ink">
+                  {s.link.label} ↗
+                </SmartLink>
+              )}
             </section>
           ))}
 
