@@ -89,12 +89,12 @@ function HeroArt() {
   return (
     <PointerParallax className="@container relative order-1 mx-auto aspect-[5/6] w-full max-w-[20rem] select-none sm:max-w-[26rem] lg:order-2 lg:max-w-[36rem]">
       {/* Layers drift with the pointer by different depths (desktop mouse only). */}
-      <div aria-hidden className="parallax-layer absolute inset-0 [--depth:14px]">
+      <div aria-hidden className="parallax-layer pointer-events-none absolute inset-0 [--depth:14px]">
       {/* blue disc behind the head (the flower's place in the reference) */}
       <div aria-hidden className="anim-pop absolute top-[6cqw] left-[6cqw] aspect-square w-[36cqw] rounded-full bg-accent-bright [animation-delay:150ms]" />
 
       </div>
-      <div aria-hidden className="parallax-layer absolute inset-0 [--depth:5px]">
+      <div aria-hidden className="parallax-layer pointer-events-none absolute inset-0 [--depth:5px]">
       {/* the giant serif initial: lower left, starting at shoulder height so it never crosses the face */}
       <span
         aria-hidden
@@ -116,7 +116,7 @@ function HeroArt() {
         />
       </div>
 
-      <div aria-hidden className="parallax-layer absolute inset-0 [--depth:-10px]">
+      <div aria-hidden className="parallax-layer pointer-events-none absolute inset-0 [--depth:-10px]">
       {/* sky-blue shard with dots, laid over the initial */}
       <div aria-hidden className="anim-rise absolute bottom-[2cqw] left-[34cqw] [animation-delay:450ms] h-[40cqw] w-[24cqw] bg-[linear-gradient(165deg,var(--color-blush),var(--color-blush-deep))] [clip-path:polygon(28%_0,100%_0,72%_100%,0_100%)]" />
       <svg aria-hidden viewBox="0 0 40 80" className="absolute bottom-[6cqw] left-[40cqw] w-[10cqw] text-accent">
