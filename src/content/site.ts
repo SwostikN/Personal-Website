@@ -25,7 +25,7 @@ export const site = {
     { name: "Saurabh Group", href: "/work/sarbo360" },
     { name: "Sarbottam Steels", href: "/work/sarbo360" },
     { name: "Sarbottam Spinning", href: "/work/sarbo360" },
-    { name: "Rotaract District 3292", href: "/work/rotaract-district-3292" },
+    { name: "Rotaract District 3292", href: "https://rotaract3292.org.np" },
     { name: "Cloud Bird India", href: "/work/client-websites" },
     { name: "Nritya Sanjiwani", href: "/work/client-websites" },
   ],

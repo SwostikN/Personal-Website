@@ -100,9 +100,16 @@ export default function Home() {
             {site.builtFor.map((org, i) => (
               <li key={org.name} className="flex items-center gap-3.5">
                 {i > 0 && <span aria-hidden className="hidden text-ink-muted/40 xl:inline">/</span>}
-                <Link href={org.href} className="text-[1rem] font-semibold whitespace-nowrap text-ink-muted transition-colors hover:text-accent">
-                  {org.name}
-                </Link>
+                {org.href.startsWith("http") ? (
+                  <a href={org.href} target="_blank" rel="noopener noreferrer" className="text-[1rem] font-semibold whitespace-nowrap text-ink-muted transition-colors hover:text-accent">
+                    {org.name}
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                ) : (
+                  <Link href={org.href} className="text-[1rem] font-semibold whitespace-nowrap text-ink-muted transition-colors hover:text-accent">
+                    {org.name}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
