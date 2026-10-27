@@ -59,7 +59,13 @@ export type Project = {
   role: string;
   organisation?: string;
   stack: string[];
-  links: { live?: string; code?: string; private?: boolean };
+  links: {
+    live?: string;
+    /** Several live sites (e.g. client work): one button each, used instead of `live`. */
+    sites?: { name: string; href: string }[];
+    code?: string;
+    private?: boolean;
+  };
   featured: boolean;
   order: number;
   metrics: { value: string; label: string }[];

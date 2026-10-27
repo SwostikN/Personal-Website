@@ -14,7 +14,12 @@ export const clientWebsites: Project = {
   timeline: "Aug – Sep 2026",
   role: "Developed and deployed",
   stack: ["Next.js", "TypeScript", "Supabase", "Resend", "Vitest"],
-  links: { live: "https://www.nrityasanjiwani.com" },
+  links: {
+    sites: [
+      { name: "Nritya Sanjiwani", href: "https://www.nrityasanjiwani.com" },
+      { name: "Cloud Bird India", href: "https://www.cloudbirdindia.com" },
+    ],
+  },
   featured: false,
   order: 6,
   metrics: [
