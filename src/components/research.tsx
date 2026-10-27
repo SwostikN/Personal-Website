@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { MediaItem, Publication, Talk } from "@/lib/types";
 import { formatDate } from "@/lib/format";
-import { EmbedFacade } from "./embed-facade";
 import { DownloadIcon } from "./icons";
 
 /** Native video: nothing downloads until play is pressed. */
@@ -32,8 +31,16 @@ export function MediaEmbed({ item }: { item: MediaItem }) {
   return (
     <figure className="flex h-full flex-col">
       {item.embed ? (
-        <div className="overflow-hidden rounded-xl border border-line bg-white">
-          <EmbedFacade src={item.embed} title={item.title} platform={item.platform} poster={item.poster ?? "/research/nrb-wp-65-cover.jpg"} />
+        <div className="relative overflow-hidden rounded-xl border border-line bg-white">
+          {/* Shown until the player paints over it */}
+          <p aria-hidden className="absolute inset-0 flex items-center justify-center text-sm text-ink-muted">Loading {item.platform}&hellip;</p>
+          <iframe
+            src={item.embed}
+            title={`${item.platform} video: ${item.title}`}
+            loading="lazy"
+            className="relative h-[560px] w-full"
+            allow="autoplay; encrypted-media; picture-in-picture"
+          />
         </div>
       ) : null}
       <figcaption className="mt-3 text-sm text-ink-muted">

@@ -147,7 +147,6 @@ export type MediaItem = {
   platform: string;
   url: string;
   embed?: string;
-  poster?: string;
   summary: string;
   date?: string;
 };
