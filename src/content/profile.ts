@@ -90,6 +90,7 @@ export const publications: Publication[] = [
     url: "https://www.nrb.org.np/contents/uploads/2026/07/nrb-wp-65-2026-07-1.pdf",
     pdf: "/research/nrb-wp-65-macroeconomic-effects-of-economic-policy-uncertainty-nepal.pdf",
     cover: "/research/nrb-wp-65-cover.jpg",
+    reader: { href: "/research/paper", dir: "/research/wp65-pages", pages: 18, width: 1400, height: 1995 },
     findings: [
       { value: "−2%", label: "GDP at peak, in the 3rd quarter after a one-standard-deviation rise in uncertainty" },
       { value: "−15%", label: "real imports at peak impact" },

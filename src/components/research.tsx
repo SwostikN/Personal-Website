@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { MediaItem, Publication, Talk } from "@/lib/types";
 import { formatDate } from "@/lib/format";
-import { DownloadIcon } from "./icons";
+import { BookIcon, DownloadIcon } from "./icons";
 
 /** Native video: nothing downloads until play is pressed. */
 export function TalkVideo({ talk }: { talk: Talk }) {
@@ -58,7 +58,7 @@ export function PaperCard({ paper, compact = false, headingLevel = "h3" }: { pap
   return (
     <article className="grid gap-8 md:grid-cols-[13rem_1fr] md:items-start">
       {paper.cover && (
-        <Link href="/research" className="group block" aria-label={`Read ${paper.title}`}>
+        <Link href={paper.reader?.href ?? "/research"} className="group block" aria-label={`Read ${paper.title}`}>
           <div className="relative aspect-[1400/1996] overflow-hidden rounded-lg border border-line shadow-[0_18px_40px_-24px_rgba(15,23,42,0.45)] transition-transform duration-300 group-hover:-translate-y-1">
             <Image src={paper.cover} alt={`Cover of ${paper.series}`} fill sizes="13rem" className="object-cover" />
           </div>
@@ -83,8 +83,13 @@ export function PaperCard({ paper, compact = false, headingLevel = "h3" }: { pap
           </dl>
         )}
         <div className="mt-6 flex flex-wrap gap-3">
+          {paper.reader && (
+            <Link href={paper.reader.href} className="inline-flex min-h-12 items-center gap-2 bg-accent px-6 font-semibold text-white transition-colors hover:bg-ink">
+              <BookIcon className="size-4" /> Read e-paper
+            </Link>
+          )}
           {paper.pdf && (
-            <a href={paper.pdf} download className="inline-flex min-h-12 items-center gap-2 bg-accent px-6 font-semibold text-white transition-colors hover:bg-ink">
+            <a href={paper.pdf} download className={`inline-flex min-h-12 items-center gap-2 px-6 font-semibold transition-colors ${paper.reader ? "border border-ink text-ink hover:bg-ink hover:text-white" : "bg-accent text-white hover:bg-ink"}`}>
               <DownloadIcon className="size-4" /> Download PDF
             </a>
           )}

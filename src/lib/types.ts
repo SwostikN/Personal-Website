@@ -117,6 +117,8 @@ export type Publication = {
   /** Copy hosted on this site, credited to the publisher. */
   pdf?: string;
   cover?: string;
+  /** Page images for the on-site reader at `reader.href`: `${dir}/page-01.webp` … */
+  reader?: { href: string; dir: string; pages: number; width: number; height: number };
   findings?: { value: string; label: string }[];
   /** Other authoritative listings of the same paper (e.g. RePEc). */
   sameAs?: string[];

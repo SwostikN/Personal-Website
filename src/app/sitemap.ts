@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absolute("/"), lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 1 },
     { url: absolute("/work"), lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.9 },
     { url: absolute("/research"), lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.9 },
+    { url: absolute("/research/paper"), lastModified: SITE_UPDATED, changeFrequency: "yearly", priority: 0.7 },
     { url: absolute("/about"), lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     { url: absolute("/cv"), lastModified: SITE_UPDATED, changeFrequency: "monthly", priority: 0.8 },
     { url: absolute("/writing"), lastModified: SITE_UPDATED, changeFrequency: "weekly", priority: 0.7 },
