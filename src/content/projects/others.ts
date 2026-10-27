@@ -3,27 +3,27 @@ import type { Project } from "@/lib/types";
 export const clientWebsites: Project = {
   slug: "client-websites",
   title: "Client websites",
-  seoTitle: "Client websites: Nritya Sanjiwani & Cloud Bird India",
+  seoTitle: "Client websites: Nritya Sanjiwani, Cloud Bird India & Moodlines",
   summary:
-    "Two client sites rebuilt in Next.js, with an admin portal, working forms and email delivery.",
+    "Three client sites with admin portals, working forms and email delivery: two rebuilt in Next.js, one given a full CMS.",
   description:
-    "Client work: nrityasanjiwani.com and cloudbirdindia.com, rebuilt in Next.js with an admin portal, role-based access, validated forms and email delivery.",
+    "Client work: nrityasanjiwani.com, cloudbirdindia.com and the Moodlines design portfolio, with admin portals, role-based access, validated forms and email delivery.",
   kind: "Client website",
   status: "Live",
   year: "2026",
-  timeline: "Aug – Sep 2026",
+  timeline: "Aug – Oct 2026",
   role: "Developed and deployed",
-  stack: ["Next.js", "TypeScript", "Supabase", "Resend", "Vitest"],
+  stack: ["Next.js", "React", "Vite", "TypeScript", "Supabase", "PostgreSQL", "Resend", "Vitest"],
   links: {},
   featured: false,
   order: 6,
   metrics: [
-    { value: "2", label: "client sites live" },
+    { value: "3", label: "client sites live" },
     { value: "10", label: "pages ported with identical output" },
     { value: "2", label: "admin roles" },
   ],
-  artefacts: ["Requirements from the client's PRD", "Content model", "Setup and handover guides"],
-  keywords: ["Next.js developer Nepal", "website developer Kathmandu", "Nritya Sanjiwani", "Cloud Bird India"],
+  artefacts: ["Requirements from the client's PRD", "Content model", "Setup and handover guides", "Database access rules"],
+  keywords: ["Next.js developer Nepal", "website developer Kathmandu", "Nritya Sanjiwani", "Cloud Bird India", "Moodlines", "CMS developer Nepal"],
   sections: [
     {
       id: "nritya",
@@ -59,6 +59,27 @@ export const clientWebsites: Project = {
             "Contact form delivered to the company inbox through Resend, with the visitor as reply-to.",
             "If email delivery fails, the form offers a pre-filled email draft, so a visitor never loses what they typed.",
             "Typed, linted and unit-tested (Vitest).",
+          ],
+        },
+      ],
+    },
+    {
+      id: "moodlines",
+      title: "Moodlines: a design studio portfolio",
+      link: { label: "Visit Moodlines", href: "https://bob-design-canvas.vercel.app" },
+      blocks: [
+        {
+          type: "p",
+          text: "A graphic design, UI/UX, sketch art and videography portfolio. The design was already in place; I made every part of it editable by the owner and put it live on Vercel.",
+        },
+        {
+          type: "list",
+          items: [
+            "A CMS at /admin: case studies with drafts, reordering and a live preview, every page section editable or switched off, and an image library.",
+            "Two roles (administrator and editor) **enforced by row-level security in PostgreSQL**, so the database itself refuses what a role may not do.",
+            "The contact form, which showed a success message without sending anything, now saves to an enquiries inbox with statuses, notes and CSV export.",
+            "A database trigger emails each new enquiry through Resend. A failed alert never loses the enquiry, and the email key stays in Supabase Vault, not in the code.",
+            "The site renders from built-in content if the database is empty or unreachable, so it is never blank.",
           ],
         },
       ],

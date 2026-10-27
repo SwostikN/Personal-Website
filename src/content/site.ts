@@ -28,6 +28,7 @@ export const site = {
     { name: "Rotaract District 3292", href: "/work/rotaract-district-3292" },
     { name: "Cloud Bird India", href: "/work/client-websites" },
     { name: "Nritya Sanjiwani", href: "/work/client-websites" },
+    { name: "Moodlines", href: "/work/client-websites#moodlines" },
   ],
   method: [
     { step: "Understand", text: "Interview users, walk the current process, find the real constraint." },

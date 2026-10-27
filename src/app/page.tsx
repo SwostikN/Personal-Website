@@ -59,10 +59,10 @@ export default function Home() {
       more: { href: "/work/rotaract-district-3292", label: "Read the case study" },
     },
     {
-      org: "Cloud Bird India · Nritya Sanjiwani",
+      org: "Cloud Bird India · Nritya Sanjiwani · Moodlines",
       role: "Freelance web developer",
-      when: "Aug – Sep 2026",
-      what: "Rebuilt both client websites in Next.js, with an admin portal, validated forms and email delivery. Both are live.",
+      when: "Aug – Oct 2026",
+      what: "Rebuilt two client websites in Next.js and added a full CMS to a third, with admin portals, validated forms and email delivery. All three are live.",
       logos: [
         { src: "/logos/cloud-bird-india.png", alt: "Cloud Bird India" },
         { src: "/logos/nritya-sanjiwani.svg", alt: "Nritya Sanjiwani" },
@@ -96,17 +96,17 @@ export default function Home() {
       <section aria-labelledby="built-for" className="border-y border-line">
         <Container className="flex flex-col gap-3 py-6 lg:flex-row lg:items-center lg:gap-x-6">
           <h2 id="built-for" className="shrink-0 font-mono text-xs tracking-[0.16em] text-ink-muted uppercase">Built for</h2>
-          <ul className="flex min-w-0 flex-1 flex-wrap items-center gap-x-6 gap-y-2 xl:gap-x-3.5">
+          <ul className="flex min-w-0 flex-1 flex-wrap items-center gap-x-6 gap-y-2 xl:gap-x-2.5">
             {site.builtFor.map((org, i) => (
-              <li key={org.name} className="flex items-center gap-3.5">
+              <li key={org.name} className="flex items-center gap-3.5 xl:gap-2.5">
                 {i > 0 && <span aria-hidden className="hidden text-ink-muted/40 xl:inline">/</span>}
                 {org.href.startsWith("http") ? (
-                  <a href={org.href} target="_blank" rel="noopener noreferrer" className="text-[1rem] font-semibold whitespace-nowrap text-ink-muted transition-colors hover:text-accent">
+                  <a href={org.href} target="_blank" rel="noopener noreferrer" className="text-[1rem] font-semibold whitespace-nowrap xl:text-[0.95rem] text-ink-muted transition-colors hover:text-accent">
                     {org.name}
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 ) : (
-                  <Link href={org.href} className="text-[1rem] font-semibold whitespace-nowrap text-ink-muted transition-colors hover:text-accent">
+                  <Link href={org.href} className="text-[1rem] font-semibold whitespace-nowrap xl:text-[0.95rem] text-ink-muted transition-colors hover:text-accent">
                     {org.name}
                   </Link>
                 )}
