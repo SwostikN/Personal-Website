@@ -116,8 +116,79 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Professional statement: why public systems, each point tied to existing work */}
-      <PublicSystems />
+      {/* Research and talks */}
+      <section aria-labelledby="research" className="py-20 sm:py-28">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6" data-reveal>
+            <SectionHeader id="research" eyebrow="Research & talks" title="Published by Nepal Rastra Bank. Presented at Tribhuvan University." />
+            <Link href="/research" className="group inline-flex items-center gap-2 font-semibold text-ink hover:text-accent">
+              Research page <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+          <div className="mt-12" data-reveal>
+            <PaperCard paper={paper} compact />
+          </div>
+          <div className="mt-14 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+            <div data-reveal>
+              <p className="font-mono text-xs tracking-wide text-accent uppercase">Watch presentation</p>
+              <h3 className="mt-2 text-xl font-bold text-ink">Presenting at {talk.event}, {talk.host}</h3>
+              <div className="mt-4">
+                <TalkVideo talk={talk} />
+              </div>
+              <ul className="mt-5 grid grid-cols-3 gap-3" aria-label={`Photos from ${talk.event}`}>
+                {talk.photos.slice(0, 3).map((ph) => (
+                  <li key={ph.src} className="relative aspect-[3/2] overflow-hidden rounded-lg bg-surface">
+                    <Image src={ph.src} alt={ph.alt} fill sizes="(min-width: 1024px) 12rem, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {media[0] && (
+              <div data-reveal>
+                <p className="font-mono text-xs tracking-wide text-accent uppercase">In the media</p>
+                <h3 className="mt-2 text-xl font-bold text-ink">{media[0].title}</h3>
+                <div className="mt-4">
+                  <MediaEmbed item={media[0]} />
+                </div>
+              </div>
+            )}
+          </div>
+        </Container>
+      </section>
+
+      {/* Experience: consistent cards, each with a logo and a read-more link */}
+      <section aria-labelledby="experience" className="border-t border-line bg-surface py-20 sm:py-28">
+        <Container>
+          <div className="flex flex-wrap items-end justify-between gap-6" data-reveal>
+            <SectionHeader id="experience" eyebrow="Experience" title="Where I've worked, and who I've built for." />
+            <Link href="/cv" className="group inline-flex items-center gap-2 font-semibold text-ink hover:text-accent">
+              Full CV <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+          <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {experienceCards.map((c) => (
+              <li key={c.org} data-reveal>
+                <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_40px_-24px_rgba(31,95,209,0.45)]">
+                  <div className="flex items-center gap-3">
+                    {c.logos.map((l) => (
+                      <span key={l.src} className="relative flex h-12 w-20 items-center justify-center rounded-md border border-line bg-white p-1.5">
+                        <Image src={l.src} alt={`${l.alt} logo`} width={72} height={40} className="max-h-9 w-auto object-contain" />
+                      </span>
+                    ))}
+                  </div>
+                  <p className="mt-5 font-mono text-xs text-ink-muted">{c.when}</p>
+                  <h3 className="mt-1 text-lg leading-snug font-bold text-ink">{c.org}</h3>
+                  <p className="text-sm font-medium text-accent">{c.role}</p>
+                  <p className="mt-3 leading-relaxed text-ink-muted">{c.what}</p>
+                  <Link href={c.more.href} className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-ink hover:text-accent">
+                    {c.more.label} <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
       {/* Ongoing project: the Road Development App (prototype, sample data) */}
       <section aria-labelledby="ongoing" className="overflow-hidden border-t border-line bg-[linear-gradient(180deg,#FBFCFF,#FFFFFF)] py-20 sm:py-28">
@@ -200,82 +271,11 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Professional statement: why public systems, each point tied to existing work */}
+      <PublicSystems />
+
       {/* Short before-and-after case studies of improving existing systems */}
       <Improvements />
-
-      {/* Research and talks */}
-      <section aria-labelledby="research" className="border-t border-line py-20 sm:py-28">
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6" data-reveal>
-            <SectionHeader id="research" eyebrow="Research & talks" title="Published by Nepal Rastra Bank. Presented at Tribhuvan University." />
-            <Link href="/research" className="group inline-flex items-center gap-2 font-semibold text-ink hover:text-accent">
-              Research page <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-          <div className="mt-12" data-reveal>
-            <PaperCard paper={paper} compact />
-          </div>
-          <div className="mt-14 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
-            <div data-reveal>
-              <p className="font-mono text-xs tracking-wide text-accent uppercase">Watch presentation</p>
-              <h3 className="mt-2 text-xl font-bold text-ink">Presenting at {talk.event}, {talk.host}</h3>
-              <div className="mt-4">
-                <TalkVideo talk={talk} />
-              </div>
-              <ul className="mt-5 grid grid-cols-3 gap-3" aria-label={`Photos from ${talk.event}`}>
-                {talk.photos.slice(0, 3).map((ph) => (
-                  <li key={ph.src} className="relative aspect-[3/2] overflow-hidden rounded-lg bg-surface">
-                    <Image src={ph.src} alt={ph.alt} fill sizes="(min-width: 1024px) 12rem, 33vw" className="object-cover transition-transform duration-500 hover:scale-105" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {media[0] && (
-              <div data-reveal>
-                <p className="font-mono text-xs tracking-wide text-accent uppercase">In the media</p>
-                <h3 className="mt-2 text-xl font-bold text-ink">{media[0].title}</h3>
-                <div className="mt-4">
-                  <MediaEmbed item={media[0]} />
-                </div>
-              </div>
-            )}
-          </div>
-        </Container>
-      </section>
-
-      {/* Experience: consistent cards, each with a logo and a read-more link */}
-      <section aria-labelledby="experience" className="border-t border-line bg-surface py-20 sm:py-28">
-        <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6" data-reveal>
-            <SectionHeader id="experience" eyebrow="Experience" title="Where I've worked, and who I've built for." />
-            <Link href="/cv" className="group inline-flex items-center gap-2 font-semibold text-ink hover:text-accent">
-              Full CV <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-          <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {experienceCards.map((c) => (
-              <li key={c.org} data-reveal>
-                <article className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_18px_40px_-24px_rgba(31,95,209,0.45)]">
-                  <div className="flex items-center gap-3">
-                    {c.logos.map((l) => (
-                      <span key={l.src} className="relative flex h-12 w-20 items-center justify-center rounded-md border border-line bg-white p-1.5">
-                        <Image src={l.src} alt={`${l.alt} logo`} width={72} height={40} className="max-h-9 w-auto object-contain" />
-                      </span>
-                    ))}
-                  </div>
-                  <p className="mt-5 font-mono text-xs text-ink-muted">{c.when}</p>
-                  <h3 className="mt-1 text-lg leading-snug font-bold text-ink">{c.org}</h3>
-                  <p className="text-sm font-medium text-accent">{c.role}</p>
-                  <p className="mt-3 leading-relaxed text-ink-muted">{c.what}</p>
-                  <Link href={c.more.href} className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-ink hover:text-accent">
-                    {c.more.label} <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </article>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
 
       {/* Closing: get in touch + newsletter (light band echoing the hero's sky-blue shard) */}
       <section aria-labelledby="contact-cta" className="bg-[linear-gradient(160deg,#F7FAFF_0%,#E8F0FF_100%)] py-20 sm:py-28">

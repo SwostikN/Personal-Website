@@ -113,7 +113,7 @@ const improvements = [
 
 export function Improvements() {
   return (
-    <section aria-labelledby="improve" className="py-20 sm:py-28">
+    <section aria-labelledby="improve" className="border-t border-line py-20 sm:py-28">
       <Container>
         <div className="max-w-2xl" data-reveal>
           <p className="font-mono text-xs tracking-[0.14em] text-accent uppercase">Improving what exists</p>
