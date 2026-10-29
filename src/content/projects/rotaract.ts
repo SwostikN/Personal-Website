@@ -23,6 +23,11 @@ export const rotaract: Project = {
     { value: "198", label: "clubs in 20 zones" },
     { value: "2", label: "countries" },
   ],
+  engineering: [
+    { area: "APIs", detail: "Node.js API with a typed contract shared with the React frontend, so either side can change without breaking the other." },
+    { area: "Access control", detail: "Roles for members, club officers and district admins; club officers only ever see their own club." },
+    { area: "Delivery", detail: "Public site, member portal and API deployed with Docker and nginx; mobile app with push notifications." },
+  ],
   artefacts: [
     "Project plan and requirements",
     "Role and permission model",

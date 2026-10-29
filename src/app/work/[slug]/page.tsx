@@ -124,6 +124,23 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
         </div>
       )}
 
+      {/* How it's built: APIs, integrations, tests, delivery */}
+      {project.engineering && (
+        <section aria-labelledby="engineering-h" className="border-b border-line py-12 sm:py-16">
+          <Container>
+            <h2 id="engineering-h" className="font-mono text-xs tracking-[0.14em] text-accent uppercase">Engineering</h2>
+            <dl className={`mt-6 grid gap-3 sm:grid-cols-2 ${project.engineering.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
+              {project.engineering.map((e) => (
+                <div key={e.area} className="rounded-lg border border-line bg-canvas p-5">
+                  <dt className="font-bold text-ink">{e.area}</dt>
+                  <dd className="mt-1.5 text-[0.95rem] leading-relaxed text-ink-muted">{e.detail}</dd>
+                </div>
+              ))}
+            </dl>
+          </Container>
+        </section>
+      )}
+
       {/* Work in progress: prototype + what's done vs planned */}
       {project.progress && (
         <section aria-labelledby="prototype-h" className="border-b border-line py-16 sm:py-20">

@@ -7,7 +7,7 @@ import { formatDate, formatRange } from "@/lib/format";
 import { breadcrumbJsonLd, JsonLd, pageMetadata, profilePageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "CV: Swostik Nepal, System Analyst",
+  title: "CV: Swostik Nepal, Software Developer",
   description:
     "CV of Swostik Nepal: SAP Business One consultant at Saurabh Group, Nepal Rastra Bank research intern, First Class BSc (Hons) Computing.",
   path: "/cv",
@@ -41,7 +41,7 @@ export default function CvPage() {
 
         <CvSection title="Profile">
           <p className="leading-relaxed">
-            System analyst and SAP Business One consultant who turns how an organisation actually works into systems it can rely on. Developed Sarbo360, an ERP portal used daily by about 200 staff, including connectIPS bill payments, and the Rotaract District 3292 platform for 6,000+ members. Co-author of Nepal Rastra Bank Working Paper No. 65, presented at CAICE 2026 (Tribhuvan University). First Class BSc (Hons) Computing.
+            Software developer and SAP Business One consultant who builds and maintains production systems: features and APIs, integrations, and the tests behind them. Developed and deployed Sarbo360, an ERP portal used daily by about 200 staff, including connectIPS bill payments, and the Rotaract District 3292 platform for 6,000+ members. Co-author of Nepal Rastra Bank Working Paper No. 65, presented at CAICE 2026 (Tribhuvan University). First Class BSc (Hons) Computing.
           </p>
         </CvSection>
 
@@ -126,7 +126,7 @@ export default function CvPage() {
           </dl>
         </CvSection>
 
-        <p className="mt-8 text-xs text-ink-muted">References available on request. Last updated {formatDate("2026-10-26")}.</p>
+        <p className="mt-8 text-xs text-ink-muted">References available on request. Last updated {formatDate("2026-10-29")}.</p>
 
         <div className="no-print mt-10 border-t border-line pt-8">
           <ButtonLink href={site.cvPdf} download>

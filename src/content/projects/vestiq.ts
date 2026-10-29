@@ -22,6 +22,12 @@ export const vestiq: Project = {
     { value: "10", label: "architecture decision records" },
     { value: "0", label: "photos sent to third-party AI" },
   ],
+  engineering: [
+    { area: "APIs", detail: "Contract-first: one OpenAPI spec generates the TypeScript and Python types, and CI fails if they drift." },
+    { area: "Testing", detail: "109 test files. GitHub Actions runs the Python tests (pytest), database security tests and contract checks on every push." },
+    { area: "Security", detail: "Row-level security on every table, with tests proving users can't read each other's data." },
+    { area: "Decisions", detail: "10 architecture decision records." },
+  ],
   artefacts: [
     "Product and engineering plan",
     "OpenAPI contract",

@@ -22,6 +22,12 @@ export const clientWebsites: Project = {
     { value: "10", label: "pages ported with identical output" },
     { value: "2", label: "admin roles" },
   ],
+  engineering: [
+    { area: "Testing", detail: "Cloud Bird India: Vitest suites for the contact flow and the content." },
+    { area: "Integration", detail: "Email through Resend, with a pre-filled draft as fallback so no message is lost; Moodlines alerts sent by a database trigger." },
+    { area: "Access control", detail: "Admin and editor roles enforced by row-level security in PostgreSQL, not just hidden buttons." },
+    { area: "Delivery", detail: "Each site deployed on Vercel, with setup and handover guides for the client." },
+  ],
   artefacts: ["Requirements from the client's PRD", "Content model", "Setup and handover guides", "Database access rules"],
   keywords: ["Next.js developer Nepal", "website developer Kathmandu", "Nritya Sanjiwani", "Cloud Bird India", "Moodlines", "CMS developer Nepal"],
   sections: [

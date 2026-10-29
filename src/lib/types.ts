@@ -76,6 +76,8 @@ export type Project = {
   artefacts: string[];
   keywords: string[];
   sections: Section[];
+  /** How it is built: APIs, integrations, tests, delivery. Only facts that can be shown in the code. */
+  engineering?: { area: string; detail: string }[];
   /** For work in progress: what exists now vs what comes next. */
   progress?: { done: string[]; next: string[] };
   /** Who a work-in-progress is designed for, and what it would give them. */

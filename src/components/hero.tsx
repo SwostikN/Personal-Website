@@ -27,8 +27,8 @@ export function Hero() {
           </p>
   
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-muted">
-            System Analyst who turns how organisations really work into reliable software: ERP and payments, public platforms,
-            and tools that make public information easier to use.
+            Software developer who builds and maintains the systems organisations run on: ERP and payment integrations, APIs,
+            public platforms, and tools that make public information easier to use.
           </p>
   
           <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">

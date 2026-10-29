@@ -10,14 +10,14 @@ export const experience: Experience[] = [
     role: "Technical Consultant, SAP Business One",
     start: "2025-09",
     summary:
-      "SAP Business One consultant for a manufacturing group, and developer of Sarbo360, the group's in-house ERP portal.",
+      "Developer of Sarbo360, the group's in-house ERP portal, and SAP Business One consultant for a manufacturing group.",
     highlights: [
-      "Developed and deployed **Sarbo360**, an ERP portal on SAP Business One used by about 200 staff at Sarbottam Steels and Sarbottam Spinning, including the **connectIPS** bill-payment integration.",
-      "Support 100+ SAP users: daily issues and posting errors, user creation and authorisations, training and user guides.",
+      "Developed and deployed **Sarbo360**, an ERP portal on SAP Business One used by about 200 staff at Sarbottam Steels and Sarbottam Spinning: React and TypeScript web app, mobile app, and a Node.js API with a posting engine over the SAP Service Layer.",
+      "Built the **connectIPS** bill-payment integration, and made SAP posting idempotent per company so a retried request never creates a duplicate document.",
+      "Investigate and fix production defects, e.g. payment totals that covered only the first page of results, exports that counted cancelled documents, and purchase-order edits that matched lines by position instead of SAP's line numbers.",
       "Built 50+ SQL queries, stored procedures and print layouts in SAP HANA for sales, purchasing, inventory, finance and production reporting.",
-      "Automated controls with Formatted Searches, user-defined fields, tables and objects, transaction notifications and approval procedures.",
-      "Built and deployed custom add-ons with C#/.NET and the SAP Service Layer; manage company databases, backups and upgrades.",
-      "Maintain master data (business partners, items, employees, cost centres) and bulk-load corrections with the Data Transfer Workbench.",
+      "Built and deployed custom add-ons with C#/.NET and the SAP Service Layer; automated controls with Formatted Searches, user-defined objects, transaction notifications and approval procedures.",
+      "Support 100+ SAP users (posting errors, authorisations, training and guides); manage company databases, backups and upgrades, and bulk-load master data with the Data Transfer Workbench.",
     ],
   },
   {
@@ -190,44 +190,24 @@ export const leadership = [
 
 export const skills: { group: string; items: string[] }[] = [
   {
-    group: "Analysis",
-    items: [
-      "Requirements & SRS",
-      "Process modelling",
-      "Data modelling (ERD)",
-      "API analysis",
-      "Acceptance criteria",
-      "Feasibility studies",
-      "User guides & SOPs",
-    ],
+    group: "Development",
+    items: ["TypeScript", "React & Next.js", "Node.js", "C# / .NET", "Python & FastAPI", "React Native (Expo)", "SQL", "R"],
+  },
+  {
+    group: "APIs & integration",
+    items: ["REST APIs", "OpenAPI (contract-first)", "SAP Service Layer", "connectIPS", "Supabase", "Resend (email)"],
+  },
+  {
+    group: "Testing & delivery",
+    items: ["Unit & integration tests", "Vitest", "pytest", "GitHub Actions CI", "Git & pull requests", "Docker", "nginx", "Vercel"],
   },
   {
     group: "ERP & data",
-    items: [
-      "SAP Business One",
-      "SAP HANA",
-      "SQL & stored procedures",
-      "Service Layer (REST)",
-      "Crystal Reports / print layouts",
-      "Data Transfer Workbench",
-      "PostgreSQL",
-    ],
+    items: ["SAP Business One", "SAP HANA", "Stored procedures", "Print layouts", "Data Transfer Workbench", "PostgreSQL"],
   },
   {
-    group: "Development",
-    items: [
-      "TypeScript",
-      "React & Next.js",
-      "Node.js",
-      "C# / .NET",
-      "Python & FastAPI",
-      "React Native (Expo)",
-      "R",
-    ],
-  },
-  {
-    group: "Platform",
-    items: ["connectIPS integration", "Supabase", "Docker", "nginx", "Vercel", "GitHub Actions", "Git"],
+    group: "Design & docs",
+    items: ["Requirements & acceptance criteria", "Data modelling (ERD)", "Technical documentation", "User guides"],
   },
 ];
 
@@ -237,10 +217,10 @@ export const languages = [
 ];
 
 export const bio = [
-  "I'm Swostik Nepal, a System Analyst and SAP Business One consultant based in Kathmandu.",
+  "I'm Swostik Nepal, a software developer and SAP Business One consultant based in Kathmandu.",
   "At Saurabh Group I look after SAP Business One for 100+ users and developed Sarbo360, the ERP portal about 200 staff at Sarbottam Steels and Sarbottam Spinning use every day: purchasing, finance, inventory and connectIPS bill payments, built on top of SAP. I also developed and deployed the Rotaract District 3292 platform, which serves more than 6,000 members across Nepal and Bhutan.",
   "Before that I worked in the Research Department of Nepal Rastra Bank, where I built the data pipelines behind an Economic Policy Uncertainty index for Nepal and co-authored NRB Working Paper No. 65, which I presented at CAICE 2026, Tribhuvan University's international conference in economics. My dissertation, MediRAG, is a medical question-answering system with a safety layer I could measure: every emergency in the test set caught, and every unsafe request refused.",
-  "The thread through all of it: understand how people actually work, write down what the system must do and how we'll know it does, then build it and stay with it after go-live.",
+  "The thread through all of it: understand how people actually work, build what they need with tests that prove it works, and stay with it after go-live."
 ];
 
 export const now = {

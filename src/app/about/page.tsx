@@ -8,7 +8,7 @@ import { formatDate, formatRange } from "@/lib/format";
 import { breadcrumbJsonLd, JsonLd, pageMetadata, profilePageJsonLd, publicationJsonLd, talkJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About Swostik Nepal: System Analyst, Kathmandu",
+  title: "About Swostik Nepal: Software Developer, Kathmandu",
   description:
     "Swostik Nepal: SAP Business One consultant at Saurabh Group, Nepal Rastra Bank research intern, First Class BSc (Hons) Computing, Rotaract Treasurer.",
   path: "/about",
@@ -51,8 +51,8 @@ export default function AboutPage() {
           <SectionHeader
             id="method"
             eyebrow="How I work"
-            title="From how people work to software they can rely on."
-            intro="What I want to keep doing: make public and organisational systems more reliable, more accessible and easier to use, starting from the people who use them."
+            title="Build it, test it, ship it, and keep it working."
+            intro="What I want to keep doing: make public and organisational systems more reliable, more accessible and easier to use, one reviewed and tested change at a time."
           />
           <ol className="mt-12 grid gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {site.method.map((m, i) => (

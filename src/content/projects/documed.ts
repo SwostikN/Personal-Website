@@ -22,6 +22,12 @@ export const documed: Project = {
     { value: "40/40", label: "unsafe requests refused (baseline 33/40)" },
     { value: "454", label: "labelled acceptance cases" },
   ],
+  engineering: [
+    { area: "Testing", detail: "454 labelled cases and 10 pytest modules for the guardrails, run by GitHub Actions on every change." },
+    { area: "APIs", detail: "Python FastAPI service behind a React front end." },
+    { area: "Data", detail: "Supabase PostgreSQL with pgvector and 17 versioned migrations." },
+    { area: "Safety", detail: "45 deterministic emergency rules run before the model; every sentence is checked against its citation." },
+  ],
   artefacts: [
     "Acceptance suite (454 cases, 10 task families)",
     "Safety rule set with clinical sources",

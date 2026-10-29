@@ -6,7 +6,7 @@ import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = pageMetadata({
   title: "Contact Swostik Nepal",
-  description: "Get in touch with Swostik Nepal, System Analyst and SAP Business One consultant in Kathmandu, Nepal.",
+  description: "Get in touch with Swostik Nepal, software developer and SAP Business One consultant in Kathmandu, Nepal.",
   path: "/contact",
 });
 

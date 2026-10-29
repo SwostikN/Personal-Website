@@ -23,6 +23,13 @@ export const sarbo360: Project = {
     { value: "2", label: "group companies" },
     { value: "4", label: "SAP documents posted in one step" },
   ],
+  engineering: [
+    { area: "APIs", detail: "Node.js API with a posting engine over the SAP Service Layer (REST): one form posts four linked SAP documents." },
+    { area: "Integration", detail: "connectIPS bill payments. SAP posting keys are scoped per company, so a retried request never posts twice." },
+    { area: "Data", detail: "SAP HANA queries and stored procedures, with multi-company tenancy across the group." },
+    { area: "Defect fixes", detail: "Report totals and exports corrected to match SAP's own figures; PO edits now match SAP's line numbers." },
+    { area: "Delivery", detail: "Web portal and mobile app in production, used by about 200 staff every day." },
+  ],
   artefacts: [
     "Requirements and screen inventory",
     "Process flows (purchase-to-pay, payments)",
