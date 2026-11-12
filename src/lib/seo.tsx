@@ -157,7 +157,8 @@ export function publicationJsonLd(p: Publication = publications[0]) {
     // The site owner is "Nepal, S." on the paper: point that author at the Person entity.
     author: p.authors.map((a) => (a === "Nepal, S." ? { "@type": "Person", "@id": PERSON_ID, name: site.name } : { "@type": "Person", name: a })),
     datePublished: p.date,
-    ...(p.series === "Preprint" ? {} : { isPartOf: { "@type": "PublicationIssue", name: p.series }, publisher: { "@type": "Organization", name: "Nepal Rastra Bank" } }),
+    isPartOf: { "@type": "PublicationIssue", name: p.series },
+    publisher: { "@type": "Organization", name: "Nepal Rastra Bank" },
     abstract: p.abstract,
     ...(p.url ? { url: p.url } : {}),
     ...(p.sameAs?.length ? { sameAs: p.sameAs } : {}),

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DownloadIcon } from "@/components/icons";
 import { Inline } from "@/components/inline";
 import { ButtonLink, Container } from "@/components/ui";
-import { education, experience, getProjects, languages, leadership, preprint, publications, site, skills, talks } from "@/lib/content";
+import { education, experience, getProjects, languages, leadership, publications, site, skills, talks } from "@/lib/content";
 import { formatDate, formatRange } from "@/lib/format";
 import { breadcrumbJsonLd, JsonLd, pageMetadata, profilePageJsonLd } from "@/lib/seo";
 
@@ -62,8 +62,8 @@ export default function CvPage() {
           </ol>
         </CvSection>
 
-        <CvSection title="Research and presentation">
-          {[preprint, ...publications].map((p) => (
+        <CvSection title="Publication and presentation">
+          {publications.map((p) => (
             <div key={p.slug} className="mb-3 break-inside-avoid">
               <p className="text-[0.95rem]">{p.authors.join(", ")} ({p.date.slice(0, 4)}). <em>{p.title}</em>. {p.series}, {p.publisher}.</p>
               <p className="mt-1 text-sm text-ink-muted">{p.contribution}</p>

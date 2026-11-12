@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { MediaEmbed, PaperCard, PreprintCard, TalkVideo } from "@/components/research";
+import { MediaEmbed, PaperCard, TalkVideo } from "@/components/research";
 import { Container, PageIntro, SectionHeader } from "@/components/ui";
-import { media, preprint, publications, site, talks } from "@/lib/content";
+import { media, publications, talks } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 import { breadcrumbJsonLd, JsonLd, pageMetadata, publicationJsonLd, talkJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Research: safe health AI across Nepali scripts",
+  title: "Research: economic policy uncertainty in Nepal",
   description:
-    "Swostik Nepal's research: the preprint Refusal Is Not Safety on health-chatbot gates across Nepali scripts, and NRB Working Paper No. 65 (co-author), presented at CAICE 2026.",
+    "NRB Working Paper No. 65 by Budha, Byanjankar and Swostik Nepal: a Google-Trends uncertainty index for Nepal. Read the paper and watch the CAICE 2026 talk.",
   path: "/research",
   type: "article",
-  keywords: ["Swostik Nepal research", "Refusal Is Not Safety", "health chatbot safety Nepali", "Romanized Nepali", "economic policy uncertainty Nepal", "NRB working paper 65", "CAICE 2026"],
+  keywords: ["Swostik Nepal research", "economic policy uncertainty Nepal", "NRB working paper 65", "Google Trends uncertainty index", "CAICE 2026"],
 });
 
 export default function ResearchPage() {
@@ -20,22 +20,14 @@ export default function ResearchPage() {
   const talk = talks[0];
   return (
     <>
-      <JsonLd data={[breadcrumbJsonLd([{ name: "Research", path: "/research" }]), publicationJsonLd(preprint), publicationJsonLd(paper), ...talks.map(talkJsonLd)]} />
-      <PageIntro eyebrow="Research" title="Health AI for people who don't write in English." intro={site.researchStory}>
-        <p className="mt-4 text-ink-muted">
-          Research contact:{" "}
-          <a href={`mailto:${site.academicEmail}`} className="font-semibold text-ink underline decoration-line underline-offset-4 hover:text-accent">{site.academicEmail}</a>
-        </p>
-      </PageIntro>
+      <JsonLd data={[breadcrumbJsonLd([{ name: "Research", path: "/research" }]), publicationJsonLd(paper), ...talks.map(talkJsonLd)]} />
+      <PageIntro
+        eyebrow="Research"
+        title="Measuring economic policy uncertainty in Nepal."
+        intro="We built an uncertainty index for Nepal from public Google Trends data (January 2011 to April 2026) and measured what happens to the economy when uncertainty rises."
+      />
 
       <Container className="pb-20">
-        <div data-reveal>
-          <PreprintCard paper={preprint} headingLevel="h2" />
-        </div>
-      </Container>
-
-      <Container className="border-t border-line pt-16 pb-20">
-        <p className="mb-8 font-mono text-xs tracking-wide text-accent uppercase">Co-authored · Nepal Rastra Bank · economic policy uncertainty in Nepal</p>
         <div data-reveal>
           <PaperCard paper={paper} headingLevel="h2" />
         </div>

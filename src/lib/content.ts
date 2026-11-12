@@ -1,11 +1,11 @@
 // The single read path for content. Pages import from here, never from
 // `src/content` directly, so the source can move to Sanity without page changes.
 import { posts } from "@/content/posts";
-import { bio, education, experience, languages, leadership, media, now, portrait, preprint, publications, skills, talks } from "@/content/profile";
+import { bio, education, experience, languages, leadership, media, now, portrait, publications, skills, talks } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 
-export { bio, education, experience, languages, leadership, media, now, portrait, preprint, publications, site, skills, talks };
+export { bio, education, experience, languages, leadership, media, now, portrait, publications, site, skills, talks };
 
 export function getProjects() {
   return projects;

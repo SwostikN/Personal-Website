@@ -5,25 +5,25 @@ export const documed: Project = {
   title: "DocuMed AI",
   seoTitle: "DocuMed AI: safety-first medical question answering",
   summary:
-    "A Nepali consumer-health chatbot that cites its sources (dissertation title: MediRAG). Auditing it led to my first research paper.",
+    "A medical assistant that cites its sources, flags emergencies before the AI runs, and refuses unsafe requests.",
   description:
-    "Case study: DocuMed AI (dissertation title: MediRAG), a medical RAG chatbot, and the audit of its retrieval gate that became the preprint Refusal Is Not Safety.",
+    "Case study: DocuMed AI (MediRAG), a guardrailed medical RAG system. 69/69 emergencies caught, 40/40 unsafe requests refused, 454-case acceptance suite.",
   kind: "Applied AI",
-  status: "Dissertation (2026); continued as research",
+  status: "Ongoing",
   year: "2025–2026",
-  timeline: "Dissertation 2025 – 2026; continued as research",
+  timeline: "2025 – 2026 · Dissertation",
   role: "Designed, developed and evaluated",
   stack: ["Python", "FastAPI", "React", "Supabase", "pgvector", "BM25 + MedCPT", "Cohere Rerank", "Llama 3.3 70B", "GitHub Actions"],
   links: { code: "https://github.com/SwostikN/MediRAG" },
   featured: true,
   order: 3,
   metrics: [
-    { value: "44 → 91", label: "of the same 92 messages refused by its gate: English vs Romanized Nepali" },
-    { value: "6", label: "gate designs then audited across four Nepali language forms" },
-    { value: "0", label: "refusal-only emergency replies once triage runs before the gate" },
+    { value: "69/69", label: "emergencies caught, 0 false alarms" },
+    { value: "40/40", label: "unsafe requests refused (baseline 33/40)" },
+    { value: "454", label: "labelled acceptance cases" },
   ],
   engineering: [
-    { area: "Testing", detail: "454 labelled English cases and 10 pytest modules for the guardrails, run by GitHub Actions on every change." },
+    { area: "Testing", detail: "454 labelled cases and 10 pytest modules for the guardrails, run by GitHub Actions on every change." },
     { area: "APIs", detail: "Python FastAPI service behind a React front end." },
     { area: "Data", detail: "Supabase PostgreSQL with pgvector and 17 versioned migrations." },
     { area: "Safety", detail: "45 deterministic emergency rules run before the model; every sentence is checked against its citation." },
@@ -35,7 +35,7 @@ export const documed: Project = {
     "Evaluation reports per release",
     "Engineering log",
   ],
-  keywords: ["medical RAG", "LLM guardrails", "healthcare AI Nepal", "MediRAG", "retrieval-augmented generation", "Refusal Is Not Safety", "Romanized Nepali"],
+  keywords: ["medical RAG", "LLM guardrails", "healthcare AI Nepal", "MediRAG", "retrieval-augmented generation"],
   sections: [
     {
       id: "context",
@@ -44,10 +44,6 @@ export const documed: Project = {
         {
           type: "p",
           text: "People search for health answers online and get confident, unsourced text. In a medical setting a wrong answer can be dangerous, and missing an emergency is worse. DocuMed answers health questions only from trusted sources (WHO, NHS, Nepal's health authorities), cites them, and is built to say **\"I don't know\"** or **\"go to a hospital now\"** when that is the right answer.",
-        },
-        {
-          type: "p",
-          text: "DocuMed AI and MediRAG are the same project: MediRAG is the title of my BSc dissertation (2026), and DocuMed is the name of the chatbot. I continued it as research after the degree.",
         },
       ],
     },
@@ -98,20 +94,20 @@ export const documed: Project = {
     },
     {
       id: "results",
-      title: "Dissertation results, and what the audit found",
+      title: "Results",
       blocks: [
         {
-          type: "p",
-          text: "**Dissertation version (2026), English test set only.** On the 454-case acceptance suite, written in English, the rule layer flagged all 69 emergency cases with no false alarms, and the guardrails refused 40 of 40 adversarial requests (33 of 40 for an unguarded model).",
-        },
-        {
-          type: "p",
-          text: "**The audit that followed.** Those results did not cover Nepali as people actually write it. On the same 92 messages, DocuMed's reranker gate refused 44 in English and 91 in Romanized Nepali. Testing six gate designs across English, Devanagari, Romanized and code-mixed Nepali showed that five of them left most of 41 test emergencies with only a refusal, and that putting triage ahead of the gate removed those refusals. That work is my preprint, [Refusal Is Not Safety](/research).",
+          type: "stats",
+          items: [
+            { value: "69/69", label: "emergency cases caught, zero false alarms" },
+            { value: "33 → 40", label: "of 40 adversarial requests refused, vs an unguarded model" },
+            { value: "37.5% → 75%", label: "emergency-tier accuracy after targeted overrides" },
+          ],
         },
         {
           type: "callout",
           tone: "note",
-          text: "So the 69/69 figure holds for the dissertation's English test set, not for the deployed system across scripts. The preprint is the current, broader result.",
+          text: "Honest limits: the broader hallucination measurements need a larger, independently judged test set before they can be claimed. That work is in progress.",
         },
       ],
     },

@@ -10,8 +10,6 @@ export const site = {
   email: "hello@swostikn.com.np",
   /** Address on the papers; for research and academic contact. */
   academicEmail: "swostikn@gmail.com",
-  researchStory:
-    "I build and audit health AI for people who don't write in English. My first paper showed that the safety layers in health chatbots refuse emergencies, and do so unevenly across the scripts Nepali speakers actually use. I want to learn to build health AI that is safe across languages and scripts, and to test it with real users and clinicians.",
   currently: "SAP Business One Consultant, Saurabh Group",
   /** Set NEXT_PUBLIC_SITE_URL in production; this is the fallback. */
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://swostikn.com.np").replace(/\/$/, ""),

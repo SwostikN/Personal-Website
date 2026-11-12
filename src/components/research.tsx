@@ -103,36 +103,3 @@ export function PaperCard({ paper, compact = false, headingLevel = "h3" }: { pap
     </article>
   );
 }
-
-/** The first-author preprint: title, two-line summary, one figure, and the PDF. */
-export function PreprintCard({ paper, headingLevel = "h3" }: { paper: Publication; headingLevel?: "h2" | "h3" }) {
-  const H = headingLevel;
-  return (
-    <article className="rounded-xl border border-line bg-white p-6 sm:p-8">
-      <p className="font-mono text-xs tracking-wide text-accent uppercase">{paper.status ?? paper.series}</p>
-      <H className="mt-2 max-w-4xl text-2xl leading-tight font-bold tracking-tight text-ink sm:text-3xl">{paper.title}</H>
-      <p className="mt-2 text-ink-muted">Swostik Nepal (sole author)</p>
-      {paper.summary && <p className="mt-4 max-w-3xl text-lg leading-relaxed text-ink">{paper.summary}</p>}
-      {paper.figure && (
-        <figure className="mt-6">
-          <div className="overflow-hidden rounded-lg border border-line bg-white p-2">
-            <Image src={paper.figure.src} alt={paper.figure.alt} width={paper.figure.width} height={paper.figure.height} sizes="(min-width: 1152px) 64rem, 100vw" className="h-auto w-full" />
-          </div>
-          <figcaption className="mt-2 text-sm text-ink-muted">{paper.figure.caption}</figcaption>
-        </figure>
-      )}
-      <div className="mt-6 flex flex-wrap gap-3">
-        {paper.pdf && (
-          <a href={paper.pdf} target="_blank" rel="noopener" className="inline-flex min-h-12 items-center gap-2 bg-accent px-6 font-semibold text-white transition-colors hover:bg-ink">
-            <BookIcon className="size-4" /> Read the preprint (PDF)
-          </a>
-        )}
-        {paper.url && (
-          <a href={paper.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center border border-ink px-6 font-semibold text-ink transition-colors hover:bg-ink hover:text-white">
-            View on medRxiv ↗<span className="sr-only"> (opens in a new tab)</span>
-          </a>
-        )}
-      </div>
-    </article>
-  );
-}
