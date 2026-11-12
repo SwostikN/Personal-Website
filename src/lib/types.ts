@@ -59,7 +59,7 @@ export type Project = {
   /** Meta description, 140–160 chars */
   description: string;
   kind: ProjectKind;
-  status: "Live" | "In production" | "In development" | "Ongoing";
+  status: "Live" | "In production" | "In development" | "Ongoing" | "Dissertation (2026); continued as research";
   year: string;
   timeline: string;
   role: string;
@@ -122,6 +122,13 @@ export type Publication = {
   /** Page images for the on-site reader at `reader.href`: `${dir}/page-01.webp` … */
   reader?: { href: string; dir: string; pages: number; width: number; height: number };
   findings?: { value: string; label: string }[];
+  /** e.g. "Preprint, November 2026 · not peer reviewed" */
+  status?: string;
+  /** One figure from the paper, shown on the site. */
+  figure?: { src: string; alt: string; caption: string; width: number; height: number };
+  /** Two-line plain-language summary. */
+  summary?: string;
+  supplement?: string;
   /** Other authoritative listings of the same paper (e.g. RePEc). */
   sameAs?: string[];
   /** Press coverage that names the author. */

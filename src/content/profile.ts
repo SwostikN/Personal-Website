@@ -26,10 +26,10 @@ export const experience: Experience[] = [
     role: "Economic Research Intern, Research Department",
     start: "2025-05",
     end: "2025-07",
-    summary: "Research internship at Nepal's central bank, contributing to a published working paper.",
+    summary: "Research internship at Nepal's central bank; co-author of the resulting working paper.",
     highlights: [
       "Built Python and Selenium data-collection pipelines to assemble search-volume series for Nepal's Economic Policy Uncertainty (EPU) index.",
-      "Developed R routines for statistical modelling and visualisation, contributing to **NRB Working Paper No. 65**.",
+      "Developed R routines for statistical modelling and visualisation for **NRB Working Paper No. 65**, which I co-authored.",
     ],
     url: "https://www.nrb.org.np",
     logo: "/logos/nepal-rastra-bank.png",
@@ -57,8 +57,8 @@ export const education: Education[] = [
     institution: "The British College, Kathmandu",
     qualification: "BSc (Hons) Computing, First Class Honours",
     detail:
-      "Validated by Leeds Beckett University, UK. Dissertation: MediRAG, a guardrailed clinical retrieval-augmented generation system.",
-    start: "2023-01",
+      "Validated by Leeds Beckett University, UK. Dissertation: DocuMed AI (dissertation title: MediRAG), a guardrailed clinical retrieval-augmented generation system.",
+    start: "2024-01",
     end: "2026-09",
   },
   {
@@ -75,6 +75,30 @@ export const education: Education[] = [
   },
 ];
 
+/** First-author research paper (sole author). Posted here until the medRxiv link is live. */
+export const preprint: Publication = {
+  slug: "refusal-is-not-safety",
+  title: "Refusal Is Not Safety: Retrieval Gates in Health Chatbots Withhold Emergency Advice, Unevenly Across Nepali Scripts",
+  authors: ["Nepal, S."],
+  series: "Preprint",
+  publisher: "Independent research, Kathmandu",
+  date: "2026-11",
+  status: "Preprint, November 2026 · not peer reviewed",
+  contribution: "Sole author: designed and pre-specified the evaluation, built the test set and pipelines, ran the analysis and wrote the paper.",
+  summary:
+    "Five of six common retrieval-gate designs left most of 41 test emergencies with only a refusal, and did so unevenly across English, Devanagari, Romanized and code-mixed Nepali. Putting triage ahead of the gate removed refusal-only replies to emergencies.",
+  abstract:
+    "Retrieval-augmented health chatbots often refuse when retrieved evidence appears weak. A pre-specified, paired audit of six gate designs across four language forms found that gates turned most emergencies into refusals, unevenly across scripts, and that equalizing a gate across scripts did not make it safe. Placing triage ahead of the gate eliminated refusal-only replies to emergencies.",
+  pdf: "/research/refusal-is-not-safety-preprint.pdf",
+  figure: {
+    src: "/research/refusal-fig2-emergencies-lost.png",
+    alt: "Heat map from the preprint: emergencies, out of 41, that received a refusal-only reply under each gate design (rows) and language form (EN, DEV, ROM, MIX). Most gates lose most emergencies; with Fix-1 every cell is zero.",
+    caption: "Fig. 2 from the preprint: emergencies (of 41) left with a refusal-only reply, by gate and language form. Fix-1, triage ahead of the gate, brings every cell to zero.",
+    width: 1995,
+    height: 618,
+  },
+};
+
 export const publications: Publication[] = [
   {
     slug: "nrb-working-paper-65",
@@ -84,7 +108,7 @@ export const publications: Publication[] = [
     publisher: "Economic Research Department, Nepal Rastra Bank",
     date: "2026-07",
     contribution:
-      "Designed the keyword set, normalised search-volume series against a benchmark, applied Hodrick–Prescott decomposition to the aggregate index, and contributed to the study's framing (Sections 1–2).",
+      "Designed the keyword set, normalised search-volume series against a benchmark, applied Hodrick–Prescott decomposition to the aggregate index, and worked on the study's framing (Sections 1–2) as co-author.",
     abstract:
       "The paper builds an Economic Policy Uncertainty index for Nepal from search-volume data and examines how policy uncertainty affects the wider economy.",
     url: "https://www.nrb.org.np/contents/uploads/2026/07/nrb-wp-65-2026-07-1.pdf",
@@ -149,7 +173,7 @@ export const talks: Talk[] = [
     video: {
       src: "/media/caice-2026-talk.mp4",
       poster: "/media/caice-2026-talk-poster.jpg",
-      caption: "Presenting the results and robustness checks at CAICE 2026 (33-second excerpt).",
+      caption: "Presented the results and robustness checks at CAICE 2026 (33-second excerpt).",
     },
     photos: [
       { src: "/images/caice-2026-stage.jpg", alt: "Swostik Nepal presenting the Economic Policy Uncertainty index for Nepal on stage at CAICE 2026, with the slide on the main screen", width: 2048, height: 1365 },
@@ -219,7 +243,7 @@ export const languages = [
 export const bio = [
   "I'm Swostik Nepal, a software developer and SAP Business One consultant based in Kathmandu.",
   "At Saurabh Group I look after SAP Business One for 100+ users and developed Sarbo360, the ERP portal about 200 staff at Sarbottam Steels and Sarbottam Spinning use every day: purchasing, finance, inventory and connectIPS bill payments, built on top of SAP. I also developed and deployed the Rotaract District 3292 platform, which serves more than 6,000 members across Nepal and Bhutan.",
-  "Before that I worked in the Research Department of Nepal Rastra Bank, where I built the data pipelines behind an Economic Policy Uncertainty index for Nepal and co-authored NRB Working Paper No. 65, which I presented at CAICE 2026, Tribhuvan University's international conference in economics. My dissertation, MediRAG, is a medical question-answering system with a safety layer I could measure: every emergency in the test set caught, and every unsafe request refused.",
+  "Before that I worked in the Research Department of Nepal Rastra Bank, where I built the data pipelines behind an Economic Policy Uncertainty index for Nepal and co-authored NRB Working Paper No. 65, which I presented at CAICE 2026, Tribhuvan University's international conference in economics. My dissertation, MediRAG (the DocuMed AI chatbot), measured its safety layer on an English test set. Auditing the same kind of system across the scripts Nepali speakers actually write in showed that its retrieval gate refused emergencies, unevenly across scripts; that audit became my first paper, Refusal Is Not Safety.",
   "The thread through all of it: understand how people actually work, build what they need with tests that prove it works, and stay with it after go-live."
 ];
 

@@ -28,6 +28,11 @@ export default function ContactPage() {
             <a href={`mailto:${site.email}`} className="mt-2 block text-lg text-ink hover:text-accent">{site.email}</a>
           </div>
           <div>
+            <Eyebrow>Research and academic</Eyebrow>
+            <a href={`mailto:${site.academicEmail}`} className="mt-2 block text-lg text-ink hover:text-accent">{site.academicEmail}</a>
+            <p className="mt-1 text-sm text-ink-muted">The address on my papers.</p>
+          </div>
+          <div>
             <Eyebrow>Based in</Eyebrow>
             <p className="mt-2 text-lg text-ink">{site.location.city}, {site.location.country}</p>
           </div>

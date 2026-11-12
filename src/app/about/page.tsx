@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Inline } from "@/components/inline";
 import { TalkFeature } from "@/components/talk";
 import { ButtonLink, Container, Eyebrow, PageIntro, SectionHeader, Tag } from "@/components/ui";
-import { bio, education, experience, languages, leadership, portrait, publications, site, skills, talks } from "@/lib/content";
+import { bio, education, experience, languages, leadership, portrait, preprint, publications, site, skills, talks } from "@/lib/content";
 import { formatDate, formatRange } from "@/lib/format";
 import { breadcrumbJsonLd, JsonLd, pageMetadata, profilePageJsonLd, publicationJsonLd, talkJsonLd } from "@/lib/seo";
 
@@ -98,14 +98,14 @@ export default function AboutPage() {
       <section aria-labelledby="pubs" className="py-20">
         <Container className="grid gap-14 lg:grid-cols-2">
           <div>
-            <SectionHeader id="pubs" eyebrow="Publication" title="Research and talks" />
-            {publications.map((p) => (
+            <SectionHeader id="pubs" eyebrow="Research" title="Papers and talks" />
+            {[preprint, ...publications].map((p) => (
               <article key={p.slug} className="mt-8 border-l-2 border-accent pl-6">
-                <p className="font-mono text-xs text-ink-muted">{p.series} · {formatDate(p.date)}</p>
+                <p className="font-mono text-xs text-ink-muted">{p.status ?? `${p.series} · ${formatDate(p.date)}`}</p>
                 <h3 className="mt-2 text-xl font-bold text-ink">{p.title}</h3>
                 <p className="mt-1 text-ink-muted">{p.authors.join(", ")} · {p.publisher}</p>
                 <p className="mt-3 leading-relaxed text-ink-muted">{p.abstract}</p>
-                <p className="mt-3 leading-relaxed text-ink-muted"><strong className="text-ink">My contribution:</strong> {p.contribution}</p>
+                <p className="mt-3 leading-relaxed text-ink-muted"><strong className="text-ink">{p.authors.length > 1 ? "My part, as co-author:" : "My part:"}</strong> {p.contribution}</p>
               </article>
             ))}
             {talks.map((t) => <TalkFeature key={t.slug} talk={t} gallery />)}

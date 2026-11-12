@@ -5,11 +5,16 @@ export const posts: Post[] = [
     slug: "emergency-detection-without-an-llm",
     title: "Why my medical AI's emergency detector doesn't use an LLM",
     description:
-      "Missing an emergency is a medical AI's worst failure. Why I put 45 deterministic rules in front of the language model, and how they scored 69/69.",
+      "Missing an emergency is a medical AI's worst failure. Why I put 45 deterministic rules in front of the language model, and what a later audit across Nepali scripts showed.",
     date: "2026-10-26",
     tags: ["AI safety", "Healthcare", "Requirements"],
     readingMinutes: 5,
     body: [
+      {
+        type: "callout",
+        tone: "note",
+        text: "Update, November 2026: the 69/69 result below was measured on my dissertation's English test set. When I later tested the deployed chatbot across Devanagari, Romanized and code-mixed Nepali, its retrieval gate refused emergencies far more often in some scripts than in English. That audit is my preprint, [Refusal Is Not Safety](/research).",
+      },
       {
         type: "p",
         text: "When I built DocuMed, a medical question-answering system for my dissertation, the first requirement I wrote down wasn't about answering questions at all. It was this: **if someone describes an emergency, tell them to get help before anything else happens.**",
@@ -41,7 +46,7 @@ export const posts: Post[] = [
       { type: "p", text: "**How I knew it worked**" },
       {
         type: "p",
-        text: "I wrote the acceptance test before the rules: a labelled set of emergency and non-emergency messages, run automatically on every change. The final rule set caught **69 out of 69** emergency cases with **zero false alarms** on that set. When I found a gap (diabetic ketoacidosis in someone who doesn't know they're diabetic, for example), the new rule went in together with test cases that prove it fires, and look-alikes that prove it doesn't.",
+        text: "I wrote the acceptance test before the rules: a labelled set of emergency and non-emergency messages, run automatically on every change. The final rule set caught **69 out of 69** emergency cases with **zero false alarms** on that set, which was written in English. When I found a gap (diabetic ketoacidosis in someone who doesn't know they're diabetic, for example), the new rule went in together with test cases that prove it fires, and look-alikes that prove it doesn't.",
       },
       { type: "p", text: "**The general lesson**" },
       {

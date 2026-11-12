@@ -4,7 +4,7 @@ import { absolute } from "@/lib/seo";
 
 // Fixed dates from content (not `new Date()`), so the sitemap prerenders and
 // `lastModified` only changes when content does.
-const SITE_UPDATED = "2026-10-27";
+const SITE_UPDATED = "2026-11-12";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: MetadataRoute.Sitemap = [

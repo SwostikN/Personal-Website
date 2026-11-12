@@ -4,11 +4,11 @@ import Link from "next/link";
 import { Hero } from "@/components/hero";
 import { ArrowIcon } from "@/components/icons";
 import { NewsletterForm } from "@/components/newsletter-form";
-import { MediaEmbed, PaperCard, TalkVideo } from "@/components/research";
+import { MediaEmbed, PaperCard, PreprintCard, TalkVideo } from "@/components/research";
 import { Improvements, PublicSystems } from "@/components/public-systems";
 import { RoadAppMockup } from "@/components/road-app-mockup";
 import { Container, Eyebrow, ProjectCard, SectionHeader } from "@/components/ui";
-import { experience, getFeaturedProjects, getProject, getProjects, media, publications, site, talks } from "@/lib/content";
+import { experience, getFeaturedProjects, getProject, getProjects, media, preprint, publications, site, talks } from "@/lib/content";
 import { formatRange } from "@/lib/format";
 import { JsonLd, pageMetadata, profilePageJsonLd, publicationJsonLd, talkJsonLd } from "@/lib/seo";
 
@@ -80,8 +80,8 @@ export default function Home() {
     {
       org: "The British College · Leeds Beckett University",
       role: "BSc (Hons) Computing, First Class Honours",
-      when: "2023 – 2026",
-      what: "Dissertation: MediRAG, a medical question-answering system with a measured safety layer (69/69 emergencies caught).",
+      when: "2024 – 2026",
+      what: "Dissertation: DocuMed AI (dissertation title: MediRAG), a medical question-answering chatbot whose audit became my first research paper.",
       logos: [{ src: "/logos/british-college.svg", alt: "The British College" }],
       more: { href: "/about#education", label: "Education and skills" },
     },
@@ -89,7 +89,7 @@ export default function Home() {
 
   return (
     <>
-      <JsonLd data={[profilePageJsonLd("/"), publicationJsonLd(paper), ...talks.map(talkJsonLd)]} />
+      <JsonLd data={[profilePageJsonLd("/"), publicationJsonLd(preprint), publicationJsonLd(paper), ...talks.map(talkJsonLd)]} />
       <Hero />
 
       {/* Built for: the organisations using these systems, each linked to its case study */}
@@ -120,18 +120,22 @@ export default function Home() {
       <section aria-labelledby="research" className="py-20 sm:py-28">
         <Container>
           <div className="flex flex-wrap items-end justify-between gap-6" data-reveal>
-            <SectionHeader id="research" eyebrow="Research & talks" title="Published by Nepal Rastra Bank. Presented at Tribhuvan University." />
+            <SectionHeader id="research" eyebrow="Research" title="Health AI for people who don't write in English." intro={site.researchStory} />
             <Link href="/research" className="group inline-flex items-center gap-2 font-semibold text-ink hover:text-accent">
               Research page <ArrowIcon className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
           <div className="mt-12" data-reveal>
+            <PreprintCard paper={preprint} />
+          </div>
+          <p className="mt-16 font-mono text-xs tracking-wide text-accent uppercase" data-reveal>Co-authored · Nepal Rastra Bank</p>
+          <div className="mt-6" data-reveal>
             <PaperCard paper={paper} compact />
           </div>
           <div className="mt-14 grid gap-10 lg:grid-cols-[1.4fr_1fr]">
             <div data-reveal>
               <p className="font-mono text-xs tracking-wide text-accent uppercase">Watch presentation</p>
-              <h3 className="mt-2 text-xl font-bold text-ink">Presenting at {talk.event}, {talk.host}</h3>
+              <h3 className="mt-2 text-xl font-bold text-ink">Presented at {talk.event}, {talk.host}</h3>
               <div className="mt-4">
                 <TalkVideo talk={talk} />
               </div>

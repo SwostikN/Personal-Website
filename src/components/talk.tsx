@@ -20,7 +20,7 @@ export function TalkFeature({ talk, gallery = false, headingLevel = "h3" }: { ta
           <Image src={lead.src} alt={lead.alt} fill sizes="(min-width: 1024px) 40rem, 100vw" className="object-cover" />
         </div>
         <figcaption className="border-t border-line px-4 py-3 text-sm text-ink-muted">
-          Presenting at {talk.event}, {talk.venue}
+          Presented at {talk.event}, {talk.venue}
         </figcaption>
       </figure>
       <p className="mt-6 font-mono text-xs text-accent uppercase">Conference talk · {dateRange(talk)}</p>
